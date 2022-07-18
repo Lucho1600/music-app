@@ -1,0 +1,44 @@
+ion-button {
+    --background: red;
+    --color: green;
+  }
+  
+  ion-slides {
+    margin: 20px 20px 20px 20px;
+    height: 100%;
+    background-color: var(--slide-color-background1);
+    max-width: 800px;
+  }
+  
+  .swiper-slide {
+    display: block;
+    margin-bottom: 60px;
+    background-color: var(--slide-color-background3); //variable creada
+  }
+  
+  ion-slide > h1, h2 {
+    margin: 20px 20px 20px 20px;
+    color: gray;
+    border-color: black;
+    border-style: dashed;
+  }
+  
+  ion-slide > p {
+    font-style: italic;
+    font-size: 22px;
+    padding: 20px 20px 20px 20px;
+    border-color: black;
+    border-style: dashed;
+  }
+  
+  ion-slide > ion-icon {
+    color: red;
+    font-size: 50px;
+  }
+  
+  ion-slide > ion-icon[name="close"]{
+    float: right;
+    color: black;
+    font-size: 40px;
+  }
+  

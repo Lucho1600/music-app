@@ -1,0 +1,28 @@
+{
+    "categories":[
+        {
+            "name":"Categoria 1",
+            "id": 1,
+            "imagen": "url_de_la_imagen",
+            "description": "description de la categoria"
+        },
+        {
+            "name":"Categoria 2",
+            "id": 1,
+            "imagen": "url_de_la_imagen",
+            "description": "description de la categoria"
+        },
+        {
+            "name":"Categoria 3",
+            "id": 1,
+            "imagen": "url_de_la_imagen",
+            "description": "description de la categoria"
+        },
+        {
+            "name":"Categoria 4",
+            "id": 1,
+            "imagen": "url_de_la_imagen",
+            "description": "description de la categoria"
+        }
+    ]
+}

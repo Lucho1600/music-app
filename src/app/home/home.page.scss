@@ -1,0 +1,17 @@
+ion-avatar {
+    height: 150px;
+    width: 90%;
+}
+
+ion-avatar span {
+    font-size: 15px;
+}
+
+ion-avatar img {
+    width: 90px;
+    height: 90px;
+}
+
+.square-avatar {
+    --border-radius: 0;
+} 
