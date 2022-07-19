@@ -1,11 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>settings</ion-title>
+    <ion-title>Configuraciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-avatar>
-  <img [src]="userImage"/>
-</ion-avatar>
+<div class="success-background">
+  <ion-avatar (click)="takePhoto()">
+    <img [src]="userImage"  *ngIf="!photo"/>
+    <img [src]="photo"  *ngIf="photo"/>
+  </ion-avatar>
+
+  <h1>Luis Vilchez</h1>
+  <h2>luis@gmail.com</h2>
+  <ion-grid>
+    <ion-row class="row-style row-header" >
+      <ion-col>24</ion-col>
+      <ion-col>15</ion-col>
+      <ion-col>5</ion-col>
+    </ion-row>
+    <ion-row class="row-style">
+      <ion-col>Canciones Favoritas</ion-col>
+      <ion-col>Seguidores</ion-col>
+      <ion-col>Artistas Favoritos</ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 </ion-content>

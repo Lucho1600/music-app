@@ -4,7 +4,6 @@ import { IntroGuard } from './guards/intro.guard';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  
   {
     path: '',
     redirectTo: 'menu',
@@ -28,10 +27,8 @@ const routes: Routes = [
   },  {
     path: 'songs-modal',
     loadChildren: () => import('./songs-modal/songs-modal.module').then( m => m.SongsModalPageModule)
-  },  {
-    path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
-  },
+  }
+
 
 
 

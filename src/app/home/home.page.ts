@@ -16,7 +16,7 @@ export class HomePage {
   categories:any;//creacion mia
   categoriesFromJson: any;//creacion mia
   albums: any;
-  currentSong;
+  currentSong: HTMLAudioElement;
   newTime;
 
   slideOps ={
