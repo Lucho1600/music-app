@@ -38,8 +38,7 @@ export class HomePage {
     preview_url: ''
   }
 
-  constructor(private musicService: MusicService, 
-    private categoriesService: CategoriesService,  private modalController: ModalController) {}
+  constructor(private musicService: MusicService, private categoriesService: CategoriesService,  private modalController: ModalController) {}
   
   ionViewDidEnter(){
     this.musicService.getArtist().then(listArtists =>{
@@ -78,6 +77,22 @@ export class HomePage {
     })
     return await modal.present();
   }
+
+  async showSongsAlbum (album) {
+    const songs = await this.musicService.getAlbumsTracks(album.id);
+    const modal = await this.modalController.create({
+      component: SongsModalPage,
+      componentProps: {
+        songs: songs,
+        album: album.name
+      }
+    });
+    modal.onDidDismiss().then( dataReturned => {
+      this.song = dataReturned.data
+    })
+    return await modal.present();
+  }
+
   play() {
     this.currentSong = new Audio(this.song.preview_url);
     this.currentSong.play();

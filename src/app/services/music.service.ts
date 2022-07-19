@@ -25,8 +25,20 @@ export class MusicService {
     );
   }
 
+  getCategories() {
+    return fetch(`${this.url_server}albums`, { mode: 'cors' , headers: this.header} ).then(
+      (albums) => albums.json()
+    );
+    }
+
   getArtistTracks(artist_id){
     return fetch(`${this.url_server}tracks/artist/${artist_id}`, { mode: 'cors' , headers: this.header} ).then(
+      (albums) => albums.json()
+    );
+  }
+
+  getAlbumsTracks(album_id) {
+    return fetch(`${this.url_server}tracks/album/${album_id}`, { mode: 'cors' , headers: this.header} ).then(
       (albums) => albums.json()
     );
   }

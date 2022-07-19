@@ -13,7 +13,7 @@ export class AuthenticateService {
       this.storage.get("user").then((data)=>{
         if (
           credentials.email == data.email && 
-          credentials.password == "123456"
+          credentials.password == atob(data.password)
         ) {
           accept("Login Exitoso");
         } else {
@@ -26,7 +26,7 @@ export class AuthenticateService {
   }
   registerUser(userData){
     userData.password = btoa(userData.password);
-    //atoa() funcion para desencriptar
+    //atob() funcion para desencriptar
     return this.storage.set("user",userData)
   }
 
