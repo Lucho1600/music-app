@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscar</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (keyup)="getTracks($event.target.value)"></ion-searchbar>
+
+  <h2> Canciones </h2>
+
+  <div class="ion-text-center" *ngIf="searching">
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+
+  <div *ngIf="!songs || songs.length === 0">
+    <h3>Opps! no se encontraron canciones</h3>
+    <ion-text>
+      {{text}}
+    </ion-text>
+  </div>
+
+  <ion-virtual-scroll
+  [items]="songs"
+  *ngIf="songs"
+  >
+  <ion-item *virtualItem="let song">
+
+    {{ song.name }}
+
+    <ion-buttons slot="end">
+
+      <ion-button (click)="pause()" *ngIf="song.playing">
+        <ion-icon name="pause"></ion-icon>
+      </ion-button>
+
+      <ion-button *ngIf="song.playing">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </ion-button>
+
+      <ion-button (click)="play(song)" *ngIf="!song.playing">
+        <ion-icon name="play"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+</ion-item> </ion-virtual-scroll>
+
+</ion-content>

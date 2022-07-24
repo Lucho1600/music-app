@@ -3,6 +3,7 @@ import { CategoriesService } from '../services/categories.service';
 import { MusicService } from '../services/music.service';
 import { ModalController } from '@ionic/angular';
 import { SongsModalPage } from '../songs-modal/songs-modal.page';
+import { SearchModalPage } from '../search-modal/search-modal.page';
 
 @Component({
   selector: 'app-home',
@@ -121,5 +122,11 @@ export class HomePage {
       }
       return minutes + ":" + seconds
     }
+  }
+  async openSearchModal() {
+    const modal = await this.modalController.create({
+      component: SearchModalPage
+    });
+    modal.present();
   }
 }
