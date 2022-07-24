@@ -56,5 +56,8 @@ export class SearchModalPage implements OnInit {
     this.currentSong.pause();
     this.song.playing = false;
   }
+  async selectSong(songg) {
+    await this.modalController.dismiss(songg)
+  }
 
 }

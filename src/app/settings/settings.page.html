@@ -10,22 +10,22 @@
 <ion-content>
 <div class="success-background">
   <ion-avatar (click)="takePhoto()">
-    <img [src]="userImage"  *ngIf="!photo"/>
-    <img [src]="photo"  *ngIf="photo"/>
+    <img [src]="userImage"  *ngIf="!user.image"/>
+    <img [src]="user.image"  *ngIf="user.image"/>
   </ion-avatar>
 
-  <h1>Luis Vilchez</h1>
-  <h2>luis@gmail.com</h2>
+  <h1>{{user.name}} {{user.last_name}}</h1>
+  <h2>{{user.email}}</h2>
   <ion-grid>
     <ion-row class="row-style row-header" >
       <ion-col>24</ion-col>
-      <ion-col>15</ion-col>
-      <ion-col>5</ion-col>
+      <ion-col>{{user.following_users.count? user.following_users.count : 0 }}</ion-col>
+      <ion-col>{{user.followed_users.count? user.followed_users.count : 0 }}</ion-col>
     </ion-row>
     <ion-row class="row-style">
       <ion-col>Canciones Favoritas</ion-col>
       <ion-col>Seguidores</ion-col>
-      <ion-col>Artistas Favoritos</ion-col>
+      <ion-col>Seguidos</ion-col>
     </ion-row>
   </ion-grid>
 </div>
