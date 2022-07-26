@@ -15,16 +15,16 @@
 
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input formControlName="nombre"></ion-input>
+      <ion-input formControlName="name"></ion-input>
     </ion-item>
 
     <div>
-      <ng-container *ngFor="let validation of validation_messages.nombre">
+      <ng-container *ngFor="let validation of validation_messages.name">
        <div 
         *ngIf="
-        registerForm.get('nombre').hasError(validation.type) && 
-          (registerForm.get('nombre').dirty || 
-          registerForm.get('nombre').touched)
+        registerForm.get('name').hasError(validation.type) && 
+          (registerForm.get('name').dirty || 
+          registerForm.get('name').touched)
         ">
         {{validation.message}}
        </div>
@@ -33,16 +33,16 @@
 
     <ion-item>
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input formControlName="apellido"></ion-input>
+      <ion-input formControlName="last_name"></ion-input>
     </ion-item>
 
     <div>
-      <ng-container *ngFor="let validation of validation_messages.apellido">
+      <ng-container *ngFor="let validation of validation_messages.last_name">
        <div 
         *ngIf="
-        registerForm.get('apellido').hasError(validation.type) && 
-          (registerForm.get('apellido').dirty || 
-          registerForm.get('apellido').touched)
+        registerForm.get('last_name').hasError(validation.type) && 
+          (registerForm.get('last_name').dirty || 
+          registerForm.get('last_name').touched)
         ">
         {{validation.message}}
        </div>

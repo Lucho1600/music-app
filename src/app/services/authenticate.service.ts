@@ -13,7 +13,7 @@ export class AuthenticateService {
 
   url_server = "https://music-back-seminario.herokuapp.com/";
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Request-Headers': '*', observe: 'response' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', observe: 'response' })
   };
 
   constructor(private storage: Storage, private http: HttpClient) { 
@@ -63,30 +63,5 @@ export class AuthenticateService {
       });
 
   }
-
-  getCurrentUser(id) {
-    return this.http.get(`${this.url_server}current_user/${id}`, this.httpOptions)
-  }
-
-  updateUser(id, user) {
-    let params = {
-      "user": user
-    }
-    return new Promise ((accept, reject) => {
-    this.http.post(`${this.url_server}update/${id}`, params, this.httpOptions)
-    .subscribe((data: any) =>{
-      if (data.status = "OK"){
-        accept(data)
-      }else{
-        reject(data.errors)
-      }
-    }, 
-    (error) => {
-      reject(error)
-    }
-    )
-  })
-  }
-
 
 }

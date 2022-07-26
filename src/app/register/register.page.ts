@@ -16,10 +16,10 @@ export class RegisterPage implements OnInit {
   registerForm: FormGroup;
   registerResult: boolean = true;
   validation_messages = {
-    nombre: [
+    name: [
       { type: "required", message: "El nombre es obligatorio" }
     ],
-    apellido: [
+    last_name: [
       { type: "required", message: "Apellidos obligatorios" }
     ],
     email: [
@@ -45,13 +45,13 @@ export class RegisterPage implements OnInit {
     private authService: AuthenticateService
   ) {
     this.registerForm = this.formBuilder.group({
-      nombre: new FormControl(
+      name: new FormControl(
         "",
         Validators.compose([
           Validators.required
         ])
       ),
-      apellido: new FormControl(
+      last_name: new FormControl(
         "",
         Validators.compose([
           Validators.required
