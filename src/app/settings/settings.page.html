@@ -30,6 +30,7 @@
   </ion-grid>
 </div>
 <h2> Buscar Usuarios</h2>
+
 <ion-searchbar (keyup)="getUsers($event.target.value)"></ion-searchbar>
 <div class="ion-text-center" *ngIf="searching">
   <ion-spinner name="crescent"></ion-spinner>
@@ -45,6 +46,9 @@
 <ion-item *virtualItem="let user">
   {{user.name}} {{user.last_name}}
   <ion-buttons slot="end">
+    <ion-button (click)="unfollowUser(user.id)" *ngIf="user.follow">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
     <ion-button (click)="followUser(user.id)" *ngIf="!user.follow">
       <ion-icon name="person-add-outline"></ion-icon>
     </ion-button>

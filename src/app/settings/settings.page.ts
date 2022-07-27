@@ -136,4 +136,18 @@ export class SettingsPage implements OnInit {
       })
     } ) 
   }
+  //----------//
+  unfollowUser(followee_id){
+
+    this.userService.unfollowUser(followee_id, this.user_id).subscribe( async (resp: any) => {
+       this.presentAlert("UnFollow","",resp.msg)
+       this.users.forEach( user  => {
+         if (followee_id == user.id){
+           user["follow"] = false
+           let newFolleew = parseInt(document.getElementById("followee").textContent) - 1
+           document.getElementById("followee").textContent = newFolleew.toString();
+         }
+       })
+     } ) 
+   }
 }
